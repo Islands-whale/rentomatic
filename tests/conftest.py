@@ -1,4 +1,4 @@
-import pytest
+import pytest  # type: ignore
 
 
 from rentomatic.app import create_app

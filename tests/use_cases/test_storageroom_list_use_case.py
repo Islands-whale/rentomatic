@@ -1,6 +1,6 @@
 import uuid
 
-import pytest
+import pytest  # type: ignore
 from unittest import mock
 
 from rentomatic.domain.storageroom import StorageRoom

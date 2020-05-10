@@ -1,4 +1,4 @@
-import pytest
+import pytest  # type: ignore
 
 from rentomatic.shared import response_object as res, request_object as req
 

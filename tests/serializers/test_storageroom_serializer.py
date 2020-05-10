@@ -2,7 +2,7 @@ import datetime
 import json
 import uuid
 
-import pytest
+import pytest  # type: ignore
 
 from rentomatic.serializers import storageroom_serializer as srs
 from rentomatic.domain.storageroom import StorageRoom

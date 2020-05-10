@@ -68,3 +68,6 @@ venv*
 .cache
 .coverage
 .pytest_cache/
+
+# mypy
+.mypy_cache/

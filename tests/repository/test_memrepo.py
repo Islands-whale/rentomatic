@@ -1,4 +1,4 @@
-import pytest
+import pytest  # type: ignore
 
 from rentomatic.domain.storageroom import StorageRoom
 from rentomatic.shared.domain_model import DomainModel
