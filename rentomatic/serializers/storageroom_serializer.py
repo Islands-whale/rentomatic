@@ -1,9 +1,11 @@
 import json
+from typing import Dict, Any
+from rentomatic.domain.storageroom import StorageRoom
 
 
 class StorageRoomEncoder(json.JSONEncoder):
 
-    def default(self, o):
+    def default(self, o: StorageRoom) -> Dict[str, Any]:
         try:
             to_serialize = {
                 'code': str(o.code),

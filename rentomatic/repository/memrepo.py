@@ -1,14 +1,15 @@
+from typing import List, Dict, Any
 from rentomatic.domain import storageroom as sr
 
 
 class MemRepo:
 
-    def __init__(self, entries=None):
+    def __init__(self, entries: List[Dict[str, Any]] = None):
         self._entries = []
         if entries:
             self._entries.extend(entries)
 
-    def _check(self, element, key, value):
+    def _check(self, element: Dict[str, Any], key: str, value: Any) -> bool:
         if '__' not in key:
             key = key + '__eq'
 
@@ -26,7 +27,7 @@ class MemRepo:
 
         return getattr(element[key], operator)(value)
 
-    def list(self, filters=None):
+    def list(self, filters: Dict[str, Any] = None) -> List[sr.StorageRoom]:
         if not filters:
             result = self._entries
         else:

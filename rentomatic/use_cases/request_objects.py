@@ -1,15 +1,15 @@
 import collections
-
+from typing import Dict, Any
 from rentomatic.shared import request_object as req
 
 
 class StorageRoomListRequestObject(req.ValidRequestObject):
 
-    def __init__(self, filters=None):
+    def __init__(self, filters: Dict[str, Any] = None):
         self.filters = filters
 
     @classmethod
-    def from_dict(cls, adict):
+    def from_dict(cls, adict: Dict[str, Dict[str, Any]]) -> req.RequestObject:
         invalid_req = req.InvalidRequestObject()
 
         if 'filters' in adict and not isinstance(adict['filters'], collections.Mapping):

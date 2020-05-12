@@ -1,9 +1,10 @@
+from typing import Dict, Any
 from rentomatic.shared.domain_model import DomainModel
 
 
 class StorageRoom(object):
 
-    def __init__(self, code, size, price, latitude, longitude):
+    def __init__(self, code: str, size: int, price: int, latitude: float, longitude: float):
         self.code = code
         self.size = size
         self.price = price
@@ -11,7 +12,7 @@ class StorageRoom(object):
         self.longitude = longitude
 
     @classmethod
-    def from_dict(cls, adict):
+    def from_dict(cls, adict: Dict[str, Any]):
         room = StorageRoom(
             code=adict['code'],
             size=adict['size'],
@@ -22,7 +23,7 @@ class StorageRoom(object):
 
         return room
 
-    def to_dict(self):
+    def to_dict(self) -> Dict[str, Any]:
         return {
             'code': self.code,
             'size': self.size,
@@ -31,7 +32,7 @@ class StorageRoom(object):
             'longitude': self.longitude,
         }
 
-    def __eq__(self, other):
+    def __eq__(self, other) -> bool:
         return self.to_dict() == other.to_dict()
 
 
